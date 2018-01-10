@@ -71,12 +71,13 @@ function getResults(result){
 };
 
 function showAnswer (success){
-  document.getElementById("code").innerHTML = "<strong>"+answer.value+"</strong>";
+  let code = document.getElementById('code');
   if (success){
-    document.getElementById("code").class = " success";
-  }else if(!success){
-    document.getElementById("code").class = " failure";
+    code.className += " success";
+  }else {
+    code.className += " failure";
   }
+  code.innerHTML = answer.value;
 };
 
 function showReplay (){
